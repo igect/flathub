@@ -135,7 +135,7 @@ modules:
       env:
         npm_config_cache: /run/build/omniget/flatpak-node/npm-cache
     build-commands:
-      - npm install --offline
+      - npm install --offline --legacy-peer-deps
       - npx vite build
       - cargo --offline build --release --manifest-path src-tauri/Cargo.toml
       - sed -i 's/com.openselena.omniget/io.github.OpenSelena.omniget/g' flatpak/com.openselena.omniget.metainfo.xml
